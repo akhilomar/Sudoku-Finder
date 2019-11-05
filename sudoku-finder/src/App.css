@@ -1,3 +1,7 @@
+html,body{
+  height: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -19,4 +23,23 @@
 
 .App-link {
   color: #09d3ac;
+}
+.container{
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+}
+.smallcontainer{
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+}
+
+
+p{
+  color: white;
 }
