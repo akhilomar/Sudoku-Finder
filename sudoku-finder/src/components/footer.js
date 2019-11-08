@@ -1,5 +1,5 @@
-
 import React from 'react';
+
 const Footer = () => {
     var style = {
         backgroundColor: "black",

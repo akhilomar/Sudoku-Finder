@@ -1,10 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import "../App.css";
 import { Input } from 'reactstrap';
+import Solver from './logic';
 
 const SudokuBox=()=>{
   
 // const [r00,setr00]=useState(""); 
+
     const [val,setVal]=useState({
         r00:"",
         r01:"",
@@ -88,339 +90,343 @@ const SudokuBox=()=>{
         r87:"",
         r88:"",
     });
-   
+    const a="1-9";
+    console.log(val.r00);
+    console.log(val.r01);
+    console.log(val.r03);
     let content=(
         <>
             
             <div className="container">
               <div className="box">
-                <Input type="number" min="1" max="9" name="r00" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r00" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r01" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r01" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r02" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r02" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r03" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r03" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r04" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r04" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r05" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r05" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r06" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r06" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r07" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r07" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r08" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r08" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r10" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r10" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r11" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r11" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r12" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r12" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r13" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r13" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r14" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r14" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r15" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r15" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r16" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r16" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r17" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r17" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r18" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r18" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r20" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r20" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r21" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r21" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r22" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r22" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r23" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r23" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r24" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r24" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r25" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r25" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r26" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r26" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r27" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r27" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r28" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r28" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r30" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r30" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r31" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r31" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r32" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r32" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r33" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r33" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r34" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r34" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r35" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r35" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r36" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r36" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r37" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r37" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r38" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r38" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r40" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r40" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r41" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r41" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r42" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r42" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r43" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r43" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r44" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r44" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r45" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r45" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r46" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r46" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r47" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r47" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r48" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r48" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r50" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r50" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r51" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r51" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r52" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r52" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r53" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r53" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r54" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r54" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r55" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r55" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r56" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r56" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r57" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r57" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r58" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r58" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r60" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r60" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r61" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r61" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r62" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r62" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r63" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r63" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r64" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r64" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r65" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r65" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r66" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r66" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r67" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r67" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r68" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r68" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r70" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r70" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r71" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r71" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r72" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r72" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r73" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r73" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r74" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r74" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r75" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r75" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r76" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r76" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r77" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r77" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r78" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r78" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r80" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r80" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r81" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r81" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r82" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r82" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r83" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r83" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r84" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r84" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r85" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r85" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r86" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r86" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r87" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r87" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
               <div className="box">
-                <Input type="number" min="1" max="9" name="r88" placeholder="1" onChange={(e)=>setVal({
+                <Input type="number" min="1" max="9" name="r88" placeholder={a} onChange={(e)=>setVal({
                     [e.target.name]:e.target.value})}/>
               </div>
             </div>
+            {/* <Solver values={val} /> */}
         </>
     );
-    useEffect((e) => console.log(val.r05), [val.r05]);
+   // useEffect((e) => console.log(val.r05), [val.r05]);
 
 //     const handleChange=(e)=>{
 //         setVal({...val,[e.target.name]:e.target.value});
