@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { cpus } from 'os';
+
 
 
 
@@ -19,9 +19,9 @@ const Solver=props=>{
     [props.r80.r80, props.r81.r81, props.r82.r82, props.r83.r83, props.r84.r84, props.r85.r85, props.r86.r86, props.r87.r87, props.r88.r88]             
     ];
 
-    useEffect(()=>{
-        solveSudoku(matrix);
-    },[])
+    
+       
+   
     
 //    useEffect(()=>{
 //     console.log(matrix)
@@ -39,11 +39,13 @@ const Solver=props=>{
     }
 
     var isValidNum=(board,row,col,num)=>{
+        num=num+'';
         for(let j=0;j<board[0].length;j++)
-            if(board[row][j]===num && j!==col)
+            if(board[row][j]===num && j!==col){
                 return false;
+            }
         for(let i=0;i<board.length; i++)
-            if(board[i][col]===num && i!=col){
+            if(board[i][col]===num && i!==row){
                 return false;
             }
     let boxRow=parseInt(row/3)*3;
@@ -58,15 +60,15 @@ const Solver=props=>{
         return true;
     }
 
-    var solveSudoku=function(board){
-        if(!nextIndex(board))
+    var solveSudoku=(board)=>{
+        if(nextIndex(board)===false)
             return true;
         let boardIndexes=nextIndex(board);
         let row=boardIndexes[0];
         let col=boardIndexes[1];
         for(let num=1;num<10;num++)
             if(isValidNum(board,row,col,num)){
-                board[row][col]=num+"";
+                board[row][col]=num+'';
                 if(solveSudoku(board)){
                     return true;
                 }
@@ -74,9 +76,9 @@ const Solver=props=>{
             }
     }
     
+solveSudoku(matrix);
+console.log(matrix[0].length);
 
-
-console.log(matrix[0][0]) 
 let content=(
     
     <>
