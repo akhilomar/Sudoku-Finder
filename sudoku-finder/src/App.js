@@ -10,7 +10,7 @@ let content=(
   <>
     <Header />
       <SudokuBox />
-    <Footer />
+    {/* <Footer /> */}
   </>
 );
 return content;
