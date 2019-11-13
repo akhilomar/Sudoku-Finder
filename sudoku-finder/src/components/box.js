@@ -1,93 +1,108 @@
 import React,{useState,useEffect} from 'react';
 import "../App.css";
-import { Input } from 'reactstrap';
+import { Input,Button } from 'reactstrap';
 import Solver from './logic';
+import Validsudoku from './validsudoku';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
+import { NavLink as RRNavLink } from 'react-router-dom';
 
 const SudokuBox=()=>{
   
 
-  const [r00,setVal1]=useState({r00:'5'});
-  const [r01,setVal2]=useState({r01:'3'});
+  const [r00,setVal1]=useState({r00:'.'});
+  const [r01,setVal2]=useState({r01:'.'});
   const [r02,setVal3]=useState({r02:'.'});
   const [r03,setVal4]=useState({r03:'.'});
-  const [r04,setVal5]=useState({r04:'7'});
+  const [r04,setVal5]=useState({r04:'.'});
   const [r05,setVal6]=useState({r05:'.'});
   const [r06,setVal7]=useState({r06:'.'});
   const [r07,setVal8]=useState({r07:'.'});
   const [r08,setVal9]=useState({r08:'.'});
-  const [r10,setVal10]=useState({r10:'6'});
+  const [r10,setVal10]=useState({r10:'.'});
   const [r11,setVal11]=useState({r11:'.'});
   const [r12,setVal12]=useState({r12:'.'});
-  const [r13,setVal13]=useState({r13:'1'});
-  const [r14,setVal14]=useState({r14:'9'});
-  const [r15,setVal15]=useState({r15:'5'});
+  const [r13,setVal13]=useState({r13:'.'});
+  const [r14,setVal14]=useState({r14:'.'});
+  const [r15,setVal15]=useState({r15:'.'});
   const [r16,setVal16]=useState({r16:'.'});
   const [r17,setVal17]=useState({r17:'.'});
   const [r18,setVal18]=useState({r18:'.'});
   const [r20,setVal19]=useState({r20:'.'});
-  const [r21,setVal20]=useState({r21:'9'});
-  const [r22,setVal21]=useState({r22:'8'});
+  const [r21,setVal20]=useState({r21:'.'});
+  const [r22,setVal21]=useState({r22:'.'});
   const [r23,setVal22]=useState({r23:'.'});
   const [r24,setVal23]=useState({r24:'.'});
   const [r25,setVal24]=useState({r25:'.'});
   const [r26,setVal25]=useState({r26:'.'});
-  const [r27,setVal26]=useState({r27:'6'});
+  const [r27,setVal26]=useState({r27:'.'});
   const [r28,setVal27]=useState({r28:'.'});
-  const [r30,setVal28]=useState({r30:'8'});
+  const [r30,setVal28]=useState({r30:'.'});
   const [r31,setVal29]=useState({r31:'.'});
   const [r32,setVal30]=useState({r32:'.'});
   const [r33,setVal31]=useState({r33:'.'});
-  const [r34,setVal32]=useState({r34:'6'});
+  const [r34,setVal32]=useState({r34:'.'});
   const [r35,setVal33]=useState({r35:'.'});
   const [r36,setVal34]=useState({r36:'.'});
   const [r37,setVal35]=useState({r37:'.'});
-  const [r38,setVal36]=useState({r38:'3'});
-  const [r40,setVal37]=useState({r40:'4'});
+  const [r38,setVal36]=useState({r38:'.'});
+  const [r40,setVal37]=useState({r40:'.'});
   const [r41,setVal38]=useState({r41:'.'});
   const [r42,setVal39]=useState({r42:'.'});
-  const [r43,setVal40]=useState({r43:'8'});
+  const [r43,setVal40]=useState({r43:'.'});
   const [r44,setVal41]=useState({r44:'.'});
-  const [r45,setVal42]=useState({r45:'3'});
+  const [r45,setVal42]=useState({r45:'.'});
   const [r46,setVal43]=useState({r46:'.'});
   const [r47,setVal44]=useState({r47:'.'});
-  const [r48,setVal45]=useState({r48:'1'});
-  const [r50,setVal46]=useState({r50:'7'});
+  const [r48,setVal45]=useState({r48:'.'});
+  const [r50,setVal46]=useState({r50:'.'});
   const [r51,setVal47]=useState({r51:'.'});
   const [r52,setVal48]=useState({r52:'.'});
   const [r53,setVal49]=useState({r53:'.'});
-  const [r54,setVal50]=useState({r54:'2'});
+  const [r54,setVal50]=useState({r54:'.'});
   const [r55,setVal51]=useState({r55:'.'});
   const [r56,setVal52]=useState({r56:'.'});
   const [r57,setVal53]=useState({r57:'.'});
-  const [r58,setVal54]=useState({r58:'6'});
+  const [r58,setVal54]=useState({r58:'.'});
   const [r60,setVal55]=useState({r60:'.'});
-  const [r61,setVal56]=useState({r61:'6'});
+  const [r61,setVal56]=useState({r61:'.'});
   const [r62,setVal57]=useState({r62:'.'});
   const [r63,setVal58]=useState({r63:'.'});
   const [r64,setVal59]=useState({r64:'.'});
   const [r65,setVal60]=useState({r65:'.'});
-  const [r66,setVal61]=useState({r66:'2'});
-  const [r67,setVal62]=useState({r67:'8'});
+  const [r66,setVal61]=useState({r66:'.'});
+  const [r67,setVal62]=useState({r67:'.'});
   const [r68,setVal63]=useState({r68:'.'});
   const [r70,setVal64]=useState({r70:'.'});
   const [r71,setVal65]=useState({r71:'.'});
   const [r72,setVal66]=useState({r72:'.'});
-  const [r73,setVal67]=useState({r73:'4'});
-  const [r74,setVal68]=useState({r74:'1'});
-  const [r75,setVal69]=useState({r75:'9'});
+  const [r73,setVal67]=useState({r73:'.'});
+  const [r74,setVal68]=useState({r74:'.'});
+  const [r75,setVal69]=useState({r75:'.'});
   const [r76,setVal70]=useState({r76:'.'});
   const [r77,setVal71]=useState({r77:'.'});
-  const [r78,setVal72]=useState({r78:'5'});
+  const [r78,setVal72]=useState({r78:'.'});
   const [r80,setVal73]=useState({r80:'.'});
   const [r81,setVal74]=useState({r81:'.'});
   const [r82,setVal75]=useState({r82:'.'});
   const [r83,setVal76]=useState({r83:'.'});
-  const [r84,setVal77]=useState({r84:'8'});
+  const [r84,setVal77]=useState({r84:'.'});
   const [r85,setVal78]=useState({r85:'.'});
   const [r86,setVal79]=useState({r86:'.'});
-  const [r87,setVal80]=useState({r87:'7'});
-  const [r88,setVal81]=useState({r88:'9'});
+  const [r87,setVal80]=useState({r87:'.'});
+  const [r88,setVal81]=useState({r88:'.'});
 
+  
     // const [val,setVal]=useState({
        
     //     r02:{r00:'.'},
@@ -171,7 +186,8 @@ const SudokuBox=()=>{
     //     r88:{r00:'.'},
     // });
     // useEffect(()=>{},[val]);
-    const a="";
+    const a=".";
+
     // console.log({r00});
     // console.log({r01});
     // console.log({r02});
@@ -181,7 +197,12 @@ const SudokuBox=()=>{
     // console.log({r06});
     // console.log({r07});
     // console.log({r08});
-   
+    const ResetFunc=()=>{
+      // useEffect(()=>{});
+       window.location.reload();
+     
+      // console.log("check");
+    }
 
     let content=(
         <>
@@ -511,7 +532,15 @@ const SudokuBox=()=>{
                     r88:e.target.value})}/>
               </div>
             </div>
-          <Solver r00={r00} r01={r01} r02={r02} r03={r03} r04={r04} r05={r05} r06={r06} r07={r07} r08={r08}
+            <div className="button1"> 
+              <div className="button1">
+                <Button color="success">SOLVE</Button>
+              </div>
+              <div className="button1">
+                <Button color="primary" onClick={ResetFunc} >RESET</Button>
+              </div>
+            </div>
+          {/* <Solver r00={r00} r01={r01} r02={r02} r03={r03} r04={r04} r05={r05} r06={r06} r07={r07} r08={r08}
                   r10={r10} r11={r11} r12={r12} r13={r13} r14={r14} r15={r15} r16={r16} r17={r17} r18={r18}
                   r20={r20} r21={r21} r22={r22} r23={r23} r24={r24} r25={r25} r26={r26} r27={r27} r28={r28}  
                   r30={r30} r31={r31} r32={r32} r33={r33} r34={r34} r35={r35} r36={r36} r37={r37} r38={r38}
@@ -520,6 +549,17 @@ const SudokuBox=()=>{
                   r60={r60} r61={r61} r62={r62} r63={r63} r64={r64} r65={r65} r66={r66} r67={r67} r68={r68}
                   r70={r70} r71={r71} r72={r72} r73={r73} r74={r74} r75={r75} r76={r76} r77={r77} r78={r78}
                   r80={r80} r81={r81} r82={r82} r83={r83} r84={r84} r85={r85} r86={r86} r87={r87} r88={r88}
+            /> */}
+            <Validsudoku  
+            r00={r00} r01={r01} r02={r02} r03={r03} r04={r04} r05={r05} r06={r06} r07={r07} r08={r08}
+            r10={r10} r11={r11} r12={r12} r13={r13} r14={r14} r15={r15} r16={r16} r17={r17} r18={r18}
+            r20={r20} r21={r21} r22={r22} r23={r23} r24={r24} r25={r25} r26={r26} r27={r27} r28={r28}  
+            r30={r30} r31={r31} r32={r32} r33={r33} r34={r34} r35={r35} r36={r36} r37={r37} r38={r38}
+            r40={r40} r41={r41} r42={r42} r43={r43} r44={r44} r45={r45} r46={r46} r47={r47} r48={r48} 
+            r50={r50} r51={r51} r52={r52} r53={r53} r54={r54} r55={r55} r56={r56} r57={r57} r58={r58}
+            r60={r60} r61={r61} r62={r62} r63={r63} r64={r64} r65={r65} r66={r66} r67={r67} r68={r68}
+            r70={r70} r71={r71} r72={r72} r73={r73} r74={r74} r75={r75} r76={r76} r77={r77} r78={r78}
+            r80={r80} r81={r81} r82={r82} r83={r83} r84={r84} r85={r85} r86={r86} r87={r87} r88={r88}
             />
         </>
     );

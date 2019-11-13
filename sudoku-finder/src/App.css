@@ -43,3 +43,11 @@ html,body{
 p{
   color: white;
 }
+
+.button1{
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+ 
+}
+
