@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {Alert} from 'reactstrap';
-import Solver from './logic';
+import SudokuBox from './box'
+
 
 const Validsudoku=props=>{
 
@@ -45,9 +46,13 @@ const printErr=()=>(
         Invalid Inputs !!
     </Alert>
 )
+// let callingLogic=()=>{
+//     <Solver/>
+// }
 let content=(
     <>
-        {answer==true?1: printErr()}
+        {answer==true?'': printErr()}
+        {/* <SudokuBox answer={answer}/> */}
     </>
 );
 return content;

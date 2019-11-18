@@ -82,7 +82,7 @@ console.log(matrix[0].length);
 let content=(
     
     <>
-    {}
+    
     <div className="container">
         
         <div>

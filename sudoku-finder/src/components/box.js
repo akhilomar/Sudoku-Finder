@@ -16,10 +16,33 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
+import { tsPropertySignature } from '@babel/types';
 
 const SudokuBox=()=>{
+ 
+  let a=".";
+ 
+  // let buttonClick=()=>{
+  //   if(props.answer)
+  //   {
+      
+  //   }
+  //   else
+  //   {
+  //     <div>
+  //       Recheck Inputs
+  //     </div>
+  //   }
+  // }
   
-
+  const ResetFunc=(forceUpdate)=>{
+    // useEffect(()=>{});
+     window.location.reload();
+     console.log(r00.r00);
+    // console.log("check");
+  }
+ 
+  const [clicked,setClick]=useState(false);  
   const [r00,setVal1]=useState({r00:'.'});
   const [r01,setVal2]=useState({r01:'.'});
   const [r02,setVal3]=useState({r02:'.'});
@@ -102,6 +125,7 @@ const SudokuBox=()=>{
   const [r87,setVal80]=useState({r87:'.'});
   const [r88,setVal81]=useState({r88:'.'});
 
+ 
   
     // const [val,setVal]=useState({
        
@@ -186,7 +210,7 @@ const SudokuBox=()=>{
     //     r88:{r00:'.'},
     // });
     // useEffect(()=>{},[val]);
-    const a=".";
+    
 
     // console.log({r00});
     // console.log({r01});
@@ -197,12 +221,8 @@ const SudokuBox=()=>{
     // console.log({r06});
     // console.log({r07});
     // console.log({r08});
-    const ResetFunc=()=>{
-      // useEffect(()=>{});
-       window.location.reload();
-     
-      // console.log("check");
-    }
+
+   
 
     let content=(
         <>
@@ -534,13 +554,13 @@ const SudokuBox=()=>{
             </div>
             <div className="button1"> 
               <div className="button1">
-                <Button color="success">SOLVE</Button>
+                <Button color="success" onClick={()=>setClick(true)} >SOLVE</Button>
               </div>
               <div className="button1">
-                <Button color="primary" onClick={ResetFunc} >RESET</Button>
+                <Button color="primary" onClick={ResetFunc}>RESET</Button>
               </div>
             </div>
-          {/* <Solver r00={r00} r01={r01} r02={r02} r03={r03} r04={r04} r05={r05} r06={r06} r07={r07} r08={r08}
+          {clicked?<Solver r00={r00} r01={r01} r02={r02} r03={r03} r04={r04} r05={r05} r06={r06} r07={r07} r08={r08}
                   r10={r10} r11={r11} r12={r12} r13={r13} r14={r14} r15={r15} r16={r16} r17={r17} r18={r18}
                   r20={r20} r21={r21} r22={r22} r23={r23} r24={r24} r25={r25} r26={r26} r27={r27} r28={r28}  
                   r30={r30} r31={r31} r32={r32} r33={r33} r34={r34} r35={r35} r36={r36} r37={r37} r38={r38}
@@ -549,7 +569,7 @@ const SudokuBox=()=>{
                   r60={r60} r61={r61} r62={r62} r63={r63} r64={r64} r65={r65} r66={r66} r67={r67} r68={r68}
                   r70={r70} r71={r71} r72={r72} r73={r73} r74={r74} r75={r75} r76={r76} r77={r77} r78={r78}
                   r80={r80} r81={r81} r82={r82} r83={r83} r84={r84} r85={r85} r86={r86} r87={r87} r88={r88}
-            /> */}
+            />:''}
             <Validsudoku  
             r00={r00} r01={r01} r02={r02} r03={r03} r04={r04} r05={r05} r06={r06} r07={r07} r08={r08}
             r10={r10} r11={r11} r12={r12} r13={r13} r14={r14} r15={r15} r16={r16} r17={r17} r18={r18}
