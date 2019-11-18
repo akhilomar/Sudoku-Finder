@@ -11,9 +11,10 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem
+} from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
-  
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,42 +28,42 @@ const Header = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-                <NavLink tag={RRNavLink} 
-                     to="/Home">Home
+              <NavLink tag={RRNavLink}
+                to="/Home">Home
                </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} 
-               to="/About">About</NavLink>
+              <NavLink tag={RRNavLink}
+                to="/About">About</NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/Contribute">Contribute</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>  
-                    Policies
+              <DropdownToggle nav caret>
+                Policies
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <NavLink tag={RRNavLink}  to="/PrivacyPolicies">  
+                  <NavLink tag={RRNavLink} to="/PrivacyPolicies">
                     Privacy Policies
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink tag={RRNavLink}  to="/Disclaimer">
+                  <NavLink tag={RRNavLink} to="/Disclaimer">
                     Disclaimer
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink tag={RRNavLink}  to="/TermsofService">
+                  <NavLink tag={RRNavLink} to="/TermsofService">
                     Terms of Service
-                  </NavLink>  
+                  </NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  <NavLink tag={RRNavLink} to="/ContactUs">  
+                  <NavLink tag={RRNavLink} to="/ContactUs">
                     Contact Us
-                  </NavLink>  
+                  </NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

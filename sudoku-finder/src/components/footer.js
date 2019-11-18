@@ -13,11 +13,11 @@ const Footer = () => {
         width: "100%",
     };
     return (
-     
+
         <div style={style}>
-           <p>All rights reserved</p>
+            <p>All rights reserved</p>
         </div>
-     
+
     );
 }
 
