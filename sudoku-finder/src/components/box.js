@@ -5,12 +5,11 @@ import Validsudoku from './validsudoku';
 
 
 const SudokuBox = () => {
-
-  let a = ".";
+  let a = "1-9";
   const ResetFunc = (forceUpdate) => {
     window.location.reload();
   }
-
+  
   const [clicked, setClick] = useState(false);
   const [r00, setVal1] = useState({ r00: '.' });
   const [r01, setVal2] = useState({ r01: '.' });
@@ -96,7 +95,8 @@ const SudokuBox = () => {
 
   let content = (
     <>
-      <div className="container">
+    <div className="largeC">
+      <div className="container"> 
         <div className="box">
           <Input type="number" min="1" max="9" name="r00" placeholder={a} onChange={(e) => setVal1({
             r00: e.target.value
@@ -511,6 +511,7 @@ const SudokuBox = () => {
           <Button color="primary" onClick={ResetFunc}>RESET</Button>
         </div>
       </div>
+    </div>
 
       {clicked ? <Validsudoku
         r00={r00} r01={r01} r02={r02} r03={r03} r04={r04} r05={r05} r06={r06} r07={r07} r08={r08}
@@ -523,6 +524,7 @@ const SudokuBox = () => {
         r70={r70} r71={r71} r72={r72} r73={r73} r74={r74} r75={r75} r76={r76} r77={r77} r78={r78}
         r80={r80} r81={r81} r82={r82} r83={r83} r84={r84} r85={r85} r86={r86} r87={r87} r88={r88}
       /> : ''}
+
     </>
   );
 

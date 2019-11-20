@@ -1,5 +1,10 @@
 html,body{
   height: 100%;
+
+  background: #360033;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .App {
@@ -25,18 +30,19 @@ html,body{
   color: #09d3ac;
 }
 .container{
-  border: 2px solid black;
+  
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-column-gap: 1px;
   grid-row-gap: 1px;
+  padding:0.5rem;
+  justify-content: center;
 }
-.smallcontainer{
-  border: 2px solid black;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
+.largeC{
+  padding: 0.5rem;
 }
 
 
@@ -51,3 +57,52 @@ p{
  
 }
 
+
+
+
+  .item{
+    background-color:black;
+    margin:0; 
+      display : inherit;
+    padding:10px; 
+    width:100px; 
+    height:100px;
+    -webkit-align-items: center;
+    -ms-flex-align:center;
+    align-items: center;
+    font-weight: 1000;
+    }
+
+#alignContent{flex-wrap:wrap; height:600px;}
+#alignContent .item{ height:auto;} 
+
+#main p {
+  -moz-column-count: 2;
+  -moz-column-gap: 10px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 10px;
+  column-count: 2;
+  column-gap: 10px;
+
+}
+aside {
+  background: #090;
+}
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  #main p {
+  -moz-column-count: 1;
+  -moz-column-gap: 1px;
+  -webkit-column-count: 1;
+  -webkit-column-gap: 1px;
+  column-count: 1;
+  column-gap: 1px;
+  
+}
+}
+
+.para{
+  padding: 0.5rem 3rem 1rem 3rem;
+}

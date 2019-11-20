@@ -22,25 +22,25 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">SUDOKU-FINDER</NavbarBrand>
+      <Navbar color="dark" light expand="md">
+        <NavbarBrand href="/" style={{color:"white", fontWeight: "1000"}}>SUDOKU-FINDER</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink tag={RRNavLink}
-                to="/Home">Home
+                to="/Home" style={{color:"white", fontWeight: "600"}}>Home
                </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink}
-                to="/About">About</NavLink>
+                to="/About" style={{color:"white", fontWeight: "600"}}>About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} to="/Contribute">Contribute</NavLink>
+              <NavLink tag={RRNavLink} to="/Contribute" style={{color:"white", fontWeight: "600"}}>Contribute</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret style={{color:"white", fontWeight: "600"}}>
                 Policies
               </DropdownToggle>
               <DropdownMenu right>

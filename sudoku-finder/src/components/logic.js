@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import "../App.css";
 
 
 const Solver = props => {
@@ -19,7 +18,7 @@ const Solver = props => {
     var nextIndex = (board) => {
         for (let i = 0; i < board.length; i++) {
             for (let j = 0; j < board[0].length; j++) {
-                if (board[i][j] === '.')
+                if (board[i][j] === '.' || board[i][j]==='')
                     return [i, j];
             }
         }
@@ -70,254 +69,260 @@ const Solver = props => {
     let content = (
 
         <>
-
-            <div className="container">
-
-                <div>
+        
+       
+          
+           <div className="container">
+            
+                <div className="item" style={{backgroundColor:"#1bbc9d", color:"white", justifyContent:"center"}}>
                     {matrix[0][0]}
                 </div>
-                <div>
+                
+                <div className="item"  style={{backgroundColor:"#2fcc71", color:"white", justifyContent:"center"}}>
                     {matrix[0][1]}
                 </div>
-                <div>
+               
+                <div className="item"  style={{backgroundColor:"#3598dc", color:"white", justifyContent:"center"}}>
                     {matrix[0][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#9c59b8",color:"white",justifyContent:"center"}} >
                     {matrix[0][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#34495e",color:"white",justifyContent:"center"}}> 
                     {matrix[0][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#7ed6df",color:"white",justifyContent:"center"}}>
                     {matrix[0][5]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#e056fd",color:"white",justifyContent:"center"}}>
                     {matrix[0][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#686de0",color:"white",justifyContent:"center"}}>
                     {matrix[0][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#30336b",color:"white",justifyContent:"center"}}>
                     {matrix[0][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#16a086",color:"white",justifyContent:"center"}}>
                     {matrix[1][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#27ae61",color:"white",justifyContent:"center"}}>
                     {matrix[1][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#2a80b9",color:"white",justifyContent:"center"}}>
                     {matrix[1][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#8f44ad",color:"white",justifyContent:"center"}}>
                     {matrix[1][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#2d3e50",color:"white",justifyContent:"center"}}>
                     {matrix[1][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#22a6b3",color:"white",justifyContent:"center"}}>
                     {matrix[1][5]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#be2edd",color:"white",justifyContent:"center"}}>
                     {matrix[1][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#4834d4",color:"white",justifyContent:"center"}}>
                     {matrix[1][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#130f40",color:"white",justifyContent:"center"}}>
                     {matrix[1][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#f1c40f",color:"white",justifyContent:"center"}}>
                     {matrix[2][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#e77e23",color:"white",justifyContent:"center"}}>
                     {matrix[2][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#e84c3d",color:"white",justifyContent:"center"}}>
                     {matrix[2][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ecf0f1",color:"white",justifyContent:"center"}}>
                     {matrix[2][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#96a6a6",color:"white",justifyContent:"center"}}>
                     {matrix[2][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#32ff7e",color:"white",justifyContent:"center"}}>
                     {matrix[2][5]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#7efff5",color:"white",justifyContent:"center"}}>
                     {matrix[2][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#18dcff",color:"white",justifyContent:"center"}}>
                     {matrix[2][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#7d5fff",color:"white",justifyContent:"center"}}>
                     {matrix[2][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#f49c14",color:"white",justifyContent:"center"}}>
                     {matrix[3][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#d55401",color:"white",justifyContent:"center"}}>
                     {matrix[3][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#c1392b",color:"white",justifyContent:"center"}}>
                     {matrix[3][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#bec3c7",color:"white",justifyContent:"center"}}>
                     {matrix[3][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#808b8d",color:"white",justifyContent:"center"}}>
                     {matrix[3][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#3ae374",color:"white",justifyContent:"center"}}>
                     {matrix[3][5]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#67e6dc",color:"white",justifyContent:"center"}}>
                     {matrix[3][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#17c0eb",color:"white",justifyContent:"center"}}>
                     {matrix[3][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#7158e2",color:"white",justifyContent:"center"}}>
                     {matrix[3][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ED4C67",color:"white",justifyContent:"center"}}>
                     {matrix[4][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#82ccdd",color:"white",justifyContent:"center"}}>
                     {matrix[4][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#b8e994",color:"white",justifyContent:"center"}}>
                     {matrix[4][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#cd84f1",color:"white",justifyContent:"center"}}>
                     {matrix[4][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ffcccc",color:"white",justifyContent:"center"}}>
                     {matrix[4][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ff4d4d",color:"white",justifyContent:"center"}}>
                     {matrix[4][5]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ffaf40",color:"white",justifyContent:"center"}}>
                     {matrix[4][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#fffa65",color:"white",justifyContent:"center"}}>
                     {matrix[4][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#FFC312",color:"white",justifyContent:"center"}}>
                     {matrix[4][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#B53471",color:"white",justifyContent:"center"}}>
                     {matrix[5][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#60a3bc",color:"white",justifyContent:"center"}}>
                     {matrix[5][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#78e08f",color:"white",justifyContent:"center"}}>
                     {matrix[5][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#c56cf0",color:"white",justifyContent:"center"}}>
                     {matrix[5][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ffb8b8",color:"white",justifyContent:"center"}}>
                     {matrix[5][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ff3838",color:"white",justifyContent:"center"}}>
                     {matrix[5][5]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#ff3838",color:"white",justifyContent:"center"}}>
                     {matrix[5][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#fff200",color:"white",justifyContent:"center"}}>
                     {matrix[5][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#F79F1F",color:"white",justifyContent:"center"}}>
                     {matrix[5][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#833471",color:"white",justifyContent:"center"}}>
                     {matrix[6][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#3c6382",color:"white",justifyContent:"center"}}>
                     {matrix[6][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#38ada9",color:"white",justifyContent:"center"}}>
                     {matrix[6][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#55efc4",color:"white",justifyContent:"center"}}>
                     {matrix[6][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#81ecec",color:"white",justifyContent:"center"}}>
                     {matrix[6][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#74b9ff",color:"white",justifyContent:"center"}}>
                     {matrix[6][5]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#a29bfe",color:"white",justifyContent:"center"}}>
                     {matrix[6][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#636e72",color:"white",justifyContent:"center"}}>
                     {matrix[6][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#EE5A24",color:"white",justifyContent:"center"}}>
                     {matrix[6][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#6F1E51",color:"white",justifyContent:"center"}}>
                     {matrix[7][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#0a3d62",color:"white",justifyContent:"center"}}>
                     {matrix[7][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#079992",color:"white",justifyContent:"center"}}>
                     {matrix[7][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#00b894",color:"white",justifyContent:"center"}}>
                     {matrix[7][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#00cec9",color:"white",justifyContent:"center"}}>
                     {matrix[7][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#0984e3",color:"white",justifyContent:"center"}}>
                     {matrix[7][5]}
                 </div>
-                <div>
-                    {matrix[7][6]}
+                <div className="item" style={{backgroundColor:"#6c5ce7",color:"white",justifyContent:"center"}}>
+                    {matrix[7][6]}   
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#2d3436",color:"white",justifyContent:"center"}}>
                     {matrix[7][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#EA2027",color:"white",justifyContent:"center"}}>
                     {matrix[7][8]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#FC427B",color:"white",justifyContent:"center"}}>
                     {matrix[8][0]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#182C61",color:"white",justifyContent:"center"}}>
                     {matrix[8][1]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#58B19F",color:"white",justifyContent:"center"}}>
                     {matrix[8][2]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#55E6C1",color:"white",justifyContent:"center"}}>
                     {matrix[8][3]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#1B9CFC",color:"white",justifyContent:"center"}}>
                     {matrix[8][4]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#3B3B98",color:"white",justifyContent:"center"}}>
                     {matrix[8][5]}
-                </div>
-                <div>
+                </div>    
+                <div className="item" style={{backgroundColor:"#182C61",color:"white",justifyContent:"center"}}>
                     {matrix[8][6]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"black",color:"white",justifyContent:"center"}}>
                     {matrix[8][7]}
                 </div>
-                <div>
+                <div className="item" style={{backgroundColor:"#EA2027",color:"white",justifyContent:"center"}}>
                     {matrix[8][8]}
                 </div>
+ 
             </div>
-
+ 
+           
         </>
     );
     return content;
