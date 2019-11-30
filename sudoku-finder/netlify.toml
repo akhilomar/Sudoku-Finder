@@ -1,4 +1,4 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[build]
+base="sudoku-finder/"
+publish="sudoku-finder/build"
+command="yarn build"
