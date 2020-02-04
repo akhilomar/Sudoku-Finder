@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 /Home /
 https://sudoku-finder.netlify.com/* https://www.sudoku-finder.com/:splat 301!
+=======
+/home /
+https://sudoku-finder.netlify.com/* https://www.sudoku-finder.com/:splat 301!
+>>>>>>> 6b18bd88d16e24900dbb8d3c15bb44657d27c54d
