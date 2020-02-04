@@ -38,7 +38,10 @@ const Header = () => {
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/Contribute" style={{color:"white", fontWeight: "600"}}>Contribute</NavLink>
-            </NavItem>
+            </NavItem>         
+            <NavItem>
+              <NavLink tag={RRNavLink} to="/Blog" style={{color:"white", fontWeight: "600"}}>Blog</NavLink>
+            </NavItem>    
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret style={{color:"white", fontWeight: "600"}}>
                 Policies
@@ -66,7 +69,7 @@ const Header = () => {
                   </NavLink>
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown>          
           </Nav>
         </Collapse>
       </Navbar>

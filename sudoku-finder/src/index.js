@@ -11,7 +11,11 @@ import PrivacyPolicies from "./components/headercomponent/privacypolicy";
 import Disclaimer from "./components/headercomponent/disclaimer";
 import TermsofService from "./components/headercomponent/termsofservice";
 import ContactUs from "./components/headercomponent/contactus";
-
+import Blog from "./components/headercomponent/Blog";
+import Sudoku from "./components/article/sudoku";
+import Chess from "./components/article/chess";
+import Snakeladder from "./components/article/snakeandladder";
+import Tictoe from "./components/article/tictac";
 
 const Root=()=>(
     <Router>
@@ -24,6 +28,11 @@ const Root=()=>(
         <Route path="/Disclaimer" exact component={Disclaimer}/>
         <Route path="/TermsofService" exact component={TermsofService}/>
         <Route path="/ContactUs" exact component={ContactUs}/>
+        <Route path="/Blog" exact component={Blog}/>
+        <Route path="/sudoku" exact component={Sudoku}/>
+        <Route path="/chess" exact component={Chess}/>
+        <Route path="/snakeladder" exact component={Snakeladder}/>
+        <Route path="/tictoe" exact component={Tictoe}/>
         </div>
     </Router>
    );
